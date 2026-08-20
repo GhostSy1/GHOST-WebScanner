@@ -1,16 +1,21 @@
-# GHOST-WebScanner 🛡️
+# GHOST-WebScanner: Specialized Web & API Security Arsenal 🌐
 
-**GHOST-WebScanner** is an elite, asynchronous web security auditing suite. It is engineered for high-performance reconnaissance and vulnerability discovery in complex web environments.
+**GHOST-WebScanner** is an elite security scanner dedicated to deep-dive vulnerability assessment of web applications and API ecosystems. Engineered with an autonomous decision core, it leverages a weaponized database of 1100+ web-specific CVEs to identify and verify critical flaws in real-time.
 
-## 🚀 Professional Features
+## 🧠 Smart Web Intelligence
 
-- **Multi-Engine Recon**: Integrated DNS resolution, IP geolocation, and advanced port discovery.
-- **Dynamic WAF Evasion**: Real-time User-Agent rotation and multi-layered payload encoding.
-- **Elite Vulnerability Database**: Covers 20+ attack vectors including SQLi, XSS, LFI, RCE, and SSRF.
-- **Asynchronous Core**: Built on `aiohttp` for maximum throughput during large-scale audits.
-- **Ghost-SY1 Interface**: signature interactive terminal UI with real-time reporting.
+- **Autonomous WAF Evasion**: Real-time analysis of web application firewalls with automated payload encoding to bypass modern filtering systems.
+- **Weaponized CVE Matching**: Automatically maps target tech stacks (CMS, Frameworks, Servers) to 1100+ active exploits in the local repository.
+- **Advanced Vulnerability Fuzzing**: Specialized modules for SSRF, LFI, RCE, and SQL Injection with automated response verification.
+- **API Security Forensics**: Deep analysis of REST and GraphQL endpoints for authorization bypass and data exposure.
 
-## 🛠️ Deployment
+## 🚀 Key Features
+
+- **Interactive Startup**: Professional terminal UI that handles all configuration post-execution for maximum efficiency.
+- **Stealth Integration**: Uses the Phantom Engine for proxy rotation and randomized headers to prevent IP blacklisting.
+- **Reliability Scoring**: Each vulnerability check is backed by a field-tested reliability score (up to 9.9/10).
+
+## 📖 Quick Start
 
 ```bash
 git clone https://github.com/GhostSy1/GHOST-WebScanner.git
@@ -21,7 +26,7 @@ python main.py
 
 ## ⚖️ Legal Disclaimer
 
-**IMPORTANT**: This tool is developed strictly for **educational and authorized security testing purposes**. The developer (**Ghost-SY1**) assumes no liability for any misuse, damage, or illegal activities performed with this software. Using this tool against targets without explicit, written permission is illegal and unethical. By using this software, you agree to comply with all local and international laws.
+**FOR AUTHORIZED PENETRATION TESTING ONLY.** Developed by **Ghost-SY1**. The developer is not responsible for any misuse of this professional security tool.
 
 ---
 Developed by **Ghost-SY1** 🛡️
