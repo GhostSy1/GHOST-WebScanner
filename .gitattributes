@@ -1,0 +1,3 @@
+*.json linguist-detectable=false
+*.json linguist-documentation=true
+core/*.go linguist-language=Go
