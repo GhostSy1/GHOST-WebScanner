@@ -52,7 +52,6 @@ async def main():
     clear_screen()
     console.print(Panel(BANNER, border_style="bold red", expand=False))
     
-    # Explicit Database Check
     db_path = os.path.join(os.path.dirname(__file__), 'db/vulnerabilities.json')
     if os.path.exists(db_path):
         with open(db_path, 'r') as f:
@@ -74,14 +73,29 @@ async def main():
         
     console.print(f"[bold green][+][/bold green] Discovered [bold white]{len(crawl_results['endpoints'])}+[/bold white] endpoints and [bold white]{len(crawl_results['js_files'])}+[/bold white] JS files.")
     
-    # Rest of the scanning logic...
+    if crawl_results['js_files']:
+        console.print(f"\n[bold green][*][/bold green] Analyzing JavaScript files for hardcoded secrets and hidden API routes...")
+        js_analyzer = JSDeepAnalyzer(crawl_results['js_files'])
+        with Progress(SpinnerColumn(), TextColumn("[progress.description]{task.description}"), transient=True) as progress:
+            progress.add_task(description="Parsing JS source code for vulnerabilities and tokens...", total=None)
+            js_findings = await js_analyzer.run()
+            
+        if js_findings:
+            t_js = Table(title="Sensitive Findings in JavaScript Files", border_style="bold red")
+            t_js.add_column("Finding Type", style="cyan")
+            t_js.add_column("Source JS File", style="white")
+            t_js.add_column("Details", style="yellow")
+            for f in js_findings:
+                t_js.add_row(f['type'], f['source'], f['detail'])
+            console.print(t_js)
+
     scanner = UltimateWebScanner(target_url)
     with Progress(SpinnerColumn(), TextColumn("[progress.description]{task.description}"), transient=True) as progress:
         progress.add_task(description="Matching weaponized CVEs against target tech stack...", total=None)
         results = await scanner.run()
     
     if results:
-        t = Table(title=f"Critical Findings for {target_url}", border_style="bold red")
+        t = Table(title=f"Critical Vulnerability Findings for {target_url}", border_style="bold red")
         t.add_column("CVE ID", style="cyan")
         t.add_column("Product", style="white")
         t.add_column("Status", style="bold red")
