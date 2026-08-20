@@ -1,42 +1,27 @@
 # GHOST-WebScanner 🛡️
 
-**GHOST-WebScanner** is an advanced, asynchronous web security and reconnaissance suite designed for professional penetration testers and security researchers. Built with performance and usability in mind, it automates the initial stages of a web application security assessment.
+**GHOST-WebScanner** is an elite, asynchronous web security auditing suite. It is engineered for high-performance reconnaissance and vulnerability discovery in complex web environments.
 
-## 🚀 Features
+## 🚀 Professional Features
 
-- **Asynchronous Reconnaissance**: Fast IP discovery, port scanning, and HTTP header analysis using `aiohttp` and `asyncio`.
-- **Automated Vulnerability Scanning**:
-    - **SQL Injection**: Error-based detection using sophisticated payloads.
-    - **Cross-Site Scripting (XSS)**: Reflected XSS detection in URL parameters.
-- **Professional Reporting**: Generates detailed scan reports with severity classification.
-- **Elite CLI Interface**: High-quality terminal UI with real-time progress tracking and formatted results tables.
+- **Multi-Engine Recon**: Integrated DNS resolution, IP geolocation, and advanced port discovery.
+- **Dynamic WAF Evasion**: Real-time User-Agent rotation and multi-layered payload encoding.
+- **Elite Vulnerability Database**: Covers 20+ attack vectors including SQLi, XSS, LFI, RCE, and SSRF.
+- **Asynchronous Core**: Built on `aiohttp` for maximum throughput during large-scale audits.
+- **Ghost-SY1 Interface**: signature interactive terminal UI with real-time reporting.
 
-## 🛠️ Installation
+## 🛠️ Deployment
 
 ```bash
 git clone https://github.com/GhostSy1/GHOST-WebScanner.git
 cd GHOST-WebScanner
 pip install -r requirements.txt
+python main.py
 ```
 
-## 📖 Usage
+## ⚖️ Legal Disclaimer
 
-Run a full scan against a target URL:
-
-```bash
-python main.py -u https://example.com
-```
-
-## 📊 Severity Levels
-
-- 🔴 **Critical**: Immediate action required (e.g., SQL Injection).
-- 🟠 **High**: Serious vulnerability (e.g., XSS).
-- 🟡 **Medium**: Security misconfigurations.
-- 🔵 **Low/Info**: Information disclosure and recon data.
-
-## ⚖️ Disclaimer
-
-This tool is developed for educational and ethical security testing purposes only. The developer (**Abdulaziz**) is not responsible for any misuse or damage caused by this tool. Always obtain proper authorization before scanning any target.
+**IMPORTANT**: This tool is developed strictly for **educational and authorized security testing purposes**. The developer (**Ghost-SY1**) assumes no liability for any misuse, damage, or illegal activities performed with this software. Using this tool against targets without explicit, written permission is illegal and unethical. By using this software, you agree to comply with all local and international laws.
 
 ---
-Developed with ❤️ by **GHOST (Abdulaziz)**
+Developed by **Ghost-SY1** 🛡️
