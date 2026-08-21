@@ -6,7 +6,6 @@ class BusinessLogicAnalyzer:
         self.findings = []
 
     async def test_price_manipulation(self, session):
-        # Simulating parameter tampering / price manipulation check
         test_endpoints = [
             f"{self.target_url}/api/cart/add",
             f"{self.target_url}/checkout",

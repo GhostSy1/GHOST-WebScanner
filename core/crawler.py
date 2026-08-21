@@ -24,14 +24,12 @@ class DeepWebCrawler:
                 html = await resp.text()
                 soup = BeautifulSoup(html, 'html.parser')
                 
-                # Extract links
                 for link in soup.find_all('a', href=True):
                     href = link['href']
                     full_url = urljoin(url, href)
                     if urlparse(full_url).netloc == self.domain:
                         self.discovered_endpoints.add(full_url)
                         
-                # Extract JavaScript files
                 for script in soup.find_all('script', src=True):
                     src = script['src']
                     full_js_url = urljoin(url, src)
@@ -43,7 +41,6 @@ class DeepWebCrawler:
     async def run(self):
         async with aiohttp.ClientSession() as session:
             await self.crawl(session, self.target_url)
-            # Crawl a few discovered endpoints for deep analysis
             sub_tasks = [self.crawl(session, ep) for banner, ep in zip(range(10), list(self.discovered_endpoints)[:10])]
             if sub_tasks:
                 import asyncio

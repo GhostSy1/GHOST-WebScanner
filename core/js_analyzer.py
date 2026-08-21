@@ -13,7 +13,6 @@ class JSDeepAnalyzer:
                     return
                 content = await resp.text()
                 
-                # Regex patterns for secrets, API keys, and hidden endpoints
                 api_key_pattern = r"(?i)(api[_-]?key|auth[_-]?token|secret|password|access[_-]?token)\s*[:=]\s*['\"]([a-zA-Z0-9_\-]{16,})['\"]"
                 endpoint_pattern = r"['\"]/([a-zA-Z0-9_\-/]+)['\"]"
                 

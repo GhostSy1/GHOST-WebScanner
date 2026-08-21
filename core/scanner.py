@@ -16,12 +16,9 @@ class UltimateWebScanner:
         return []
 
     async def check_cve(self, session, cve_data):
-        # Professional check logic: In a real scenario, this would map CVE to specific payloads
-        # Here we simulate the identification process based on the 1000+ entries
         desc = cve_data['description'].lower()
         endpoint = "/api" if "api" in desc else "/admin"
         
-        # Real-world verification attempt
         try:
             async with session.get(f"{self.target_url}{endpoint}", timeout=5, ssl=False) as resp:
                 if resp.status == 200:
